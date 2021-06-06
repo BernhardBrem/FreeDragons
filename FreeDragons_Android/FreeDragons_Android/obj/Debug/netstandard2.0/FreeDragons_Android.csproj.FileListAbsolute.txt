@@ -1,0 +1,14 @@
+C:\Users\Bernhard\source\repos\FreeDragons\FreeDragons_Android\FreeDragons_Android\bin\Debug\netstandard2.0\FreeDragons_Android.deps.json
+C:\Users\Bernhard\source\repos\FreeDragons\FreeDragons_Android\FreeDragons_Android\bin\Debug\netstandard2.0\FreeDragons_Android.dll
+C:\Users\Bernhard\source\repos\FreeDragons\FreeDragons_Android\FreeDragons_Android\bin\Debug\netstandard2.0\ref\FreeDragons_Android.dll
+C:\Users\Bernhard\source\repos\FreeDragons\FreeDragons_Android\FreeDragons_Android\bin\Debug\netstandard2.0\FreeDragons_Android.pdb
+C:\Users\Bernhard\source\repos\FreeDragons\FreeDragons_Android\FreeDragons_Android\obj\Debug\netstandard2.0\FreeDragons_Android.csproj.AssemblyReference.cache
+C:\Users\Bernhard\source\repos\FreeDragons\FreeDragons_Android\FreeDragons_Android\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Bernhard\source\repos\FreeDragons\FreeDragons_Android\FreeDragons_Android\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\Bernhard\source\repos\FreeDragons\FreeDragons_Android\FreeDragons_Android\obj\Debug\netstandard2.0\FreeDragons_Android.AssemblyInfoInputs.cache
+C:\Users\Bernhard\source\repos\FreeDragons\FreeDragons_Android\FreeDragons_Android\obj\Debug\netstandard2.0\FreeDragons_Android.AssemblyInfo.cs
+C:\Users\Bernhard\source\repos\FreeDragons\FreeDragons_Android\FreeDragons_Android\obj\Debug\netstandard2.0\FreeDragons_Android.csproj.CoreCompileInputs.cache
+C:\Users\Bernhard\source\repos\FreeDragons\FreeDragons_Android\FreeDragons_Android\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Bernhard\source\repos\FreeDragons\FreeDragons_Android\FreeDragons_Android\obj\Debug\netstandard2.0\FreeDragons_Android.dll
+C:\Users\Bernhard\source\repos\FreeDragons\FreeDragons_Android\FreeDragons_Android\obj\Debug\netstandard2.0\ref\FreeDragons_Android.dll
+C:\Users\Bernhard\source\repos\FreeDragons\FreeDragons_Android\FreeDragons_Android\obj\Debug\netstandard2.0\FreeDragons_Android.pdb
