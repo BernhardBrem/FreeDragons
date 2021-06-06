@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "MonoAndroid,Version=v11.0": {
+    "MonoAndroid,Version=v10.0": {
       "BruTile/2.1.2": {
         "type": "package",
         "dependencies": {
@@ -6032,7 +6032,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "MonoAndroid,Version=v11.0": [
+    "MonoAndroid,Version=v10.0": [
       "FreeDragons_Android >= 1.0.0",
       "Mapsui.Forms >= 2.0.3",
       "Xamarin.Essentials >= 1.6.1",
@@ -6062,14 +6062,14 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "monoandroid11.0"
+        "monoandroid10.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "monoandroid11.0": {
+        "monoandroid10.0": {
           "projectReferences": {
             "C:\\Users\\Bernhard\\source\\repos\\FreeDragons\\FreeDragons_Android\\FreeDragons_Android\\FreeDragons_Android.csproj": {
               "projectPath": "C:\\Users\\Bernhard\\source\\repos\\FreeDragons\\FreeDragons_Android\\FreeDragons_Android\\FreeDragons_Android.csproj"
@@ -6079,7 +6079,7 @@
       }
     },
     "frameworks": {
-      "monoandroid11.0": {
+      "monoandroid10.0": {
         "dependencies": {
           "Mapsui.Forms": {
             "target": "Package",
@@ -6105,7 +6105,7 @@
       "message": "Erkannte Paketversion außerhalb der Abhängigkeitseinschränkung: \"Mapsui.Forms 2.0.3\" erfordert Xamarin.Forms (>= 4.3.0 && < 5.0.0), aber es wurde Version Xamarin.Forms 5.0.0.2012 aufgelöst.",
       "libraryId": "Xamarin.Forms",
       "targetGraphs": [
-        "MonoAndroid,Version=v11.0"
+        "MonoAndroid,Version=v10.0"
       ]
     }
   ]

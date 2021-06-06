@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3jlaeMneUW9A2GtvlI2ixFkWiHYMPvaqfZ95Iv/r1x/aYqkWUegOuMwO+QvgXxQPXQMWY/0BVCow3vGAUfCQYw==",
+  "dgSpecHash": "RqpusC4qDRCF81UEwg9Kwk4JVQ6KFFg5rU1sc1y8kuKijNEO1D2zbjU1+QKMCGADGJcv97JvgxohgnFHRBXcWg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Bernhard\\source\\repos\\FreeDragons\\FreeDragons_Android\\FreeDragons_Android.Android\\FreeDragons_Android.Android.csproj",
   "expectedPackageFiles": [
@@ -122,7 +122,7 @@
       "message": "Erkannte Paketversion außerhalb der Abhängigkeitseinschränkung: \"Mapsui.Forms 2.0.3\" erfordert Xamarin.Forms (>= 4.3.0 && < 5.0.0), aber es wurde Version Xamarin.Forms 5.0.0.2012 aufgelöst.",
       "libraryId": "Xamarin.Forms",
       "targetGraphs": [
-        "MonoAndroid,Version=v11.0"
+        "MonoAndroid,Version=v10.0"
       ]
     }
   ]
