@@ -1,9 +1,0 @@
-C:\Users\Bernhard\source\repos\FreeDragons\FreeDragons_Objects\bin\Debug\netcoreapp1.0\FreeDragons_Objects.deps.json
-C:\Users\Bernhard\source\repos\FreeDragons\FreeDragons_Objects\bin\Debug\netcoreapp1.0\FreeDragons_Objects.dll
-C:\Users\Bernhard\source\repos\FreeDragons\FreeDragons_Objects\bin\Debug\netcoreapp1.0\FreeDragons_Objects.pdb
-C:\Users\Bernhard\source\repos\FreeDragons\FreeDragons_Objects\obj\Debug\netcoreapp1.0\FreeDragons_Objects.csproj.AssemblyReference.cache
-C:\Users\Bernhard\source\repos\FreeDragons\FreeDragons_Objects\obj\Debug\netcoreapp1.0\FreeDragons_Objects.AssemblyInfoInputs.cache
-C:\Users\Bernhard\source\repos\FreeDragons\FreeDragons_Objects\obj\Debug\netcoreapp1.0\FreeDragons_Objects.AssemblyInfo.cs
-C:\Users\Bernhard\source\repos\FreeDragons\FreeDragons_Objects\obj\Debug\netcoreapp1.0\FreeDragons_Objects.csproj.CoreCompileInputs.cache
-C:\Users\Bernhard\source\repos\FreeDragons\FreeDragons_Objects\obj\Debug\netcoreapp1.0\FreeDragons_Objects.dll
-C:\Users\Bernhard\source\repos\FreeDragons\FreeDragons_Objects\obj\Debug\netcoreapp1.0\FreeDragons_Objects.pdb

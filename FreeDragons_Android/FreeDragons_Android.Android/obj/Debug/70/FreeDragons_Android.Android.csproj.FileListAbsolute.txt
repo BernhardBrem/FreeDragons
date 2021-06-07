@@ -1,3 +1,0 @@
-C:\Users\Bernhard\source\repos\FreeDragons\FreeDragons_Android\FreeDragons_Android.Android\obj\Debug\70\MonoAndroid,Version=v7.0.AssemblyAttributes.cs
-C:\Users\Bernhard\source\repos\FreeDragons\FreeDragons_Android\FreeDragons_Android.Android\obj\Debug\70\build.props
-C:\Users\Bernhard\source\repos\FreeDragons\FreeDragons_Android\FreeDragons_Android.Android\obj\Debug\70\adb.props

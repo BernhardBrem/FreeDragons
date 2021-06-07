@@ -3,33 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeDragons_Android.Android", "FreeDragons_Android\FreeDragons_Android.Android\FreeDragons_Android.Android.csproj", "{B64569A3-D003-4DE3-AEC6-008DBBF4E515}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreeDragons_Android", "FreeDragons_Android\FreeDragons_Android\FreeDragons_Android.csproj", "{4A538580-216F-4DA0-85AB-BAADF2017A62}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeDragons_Objects", "FreeDragons_Objects\FreeDragons_Objects.csproj", "{B7D18CB5-C78C-4905-9E1D-73D745B31FE8}"
-EndProject
 Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B64569A3-D003-4DE3-AEC6-008DBBF4E515}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B64569A3-D003-4DE3-AEC6-008DBBF4E515}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B64569A3-D003-4DE3-AEC6-008DBBF4E515}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{B64569A3-D003-4DE3-AEC6-008DBBF4E515}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B64569A3-D003-4DE3-AEC6-008DBBF4E515}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B64569A3-D003-4DE3-AEC6-008DBBF4E515}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{4A538580-216F-4DA0-85AB-BAADF2017A62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4A538580-216F-4DA0-85AB-BAADF2017A62}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4A538580-216F-4DA0-85AB-BAADF2017A62}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4A538580-216F-4DA0-85AB-BAADF2017A62}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B7D18CB5-C78C-4905-9E1D-73D745B31FE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B7D18CB5-C78C-4905-9E1D-73D745B31FE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B7D18CB5-C78C-4905-9E1D-73D745B31FE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B7D18CB5-C78C-4905-9E1D-73D745B31FE8}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
