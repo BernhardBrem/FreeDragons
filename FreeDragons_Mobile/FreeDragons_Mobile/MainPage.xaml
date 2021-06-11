@@ -2,12 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:mapsui="clr-namespace:Mapsui.UI.Forms;assembly=Mapsui.UI.Forms"
+             xmlns:Dragon="clr-namespace:FreeDragons_Mobile"
              x:Class="FreeDragons_Mobile.MainPage">
 
     <StackLayout>
+        <!--Image Source="japan.png"></Image-->
         <Frame BackgroundColor="Gold" Padding="14" CornerRadius="0">
             <Label Text="Free the dragons!" HorizontalTextAlignment="Center" TextColor="Black" FontSize="16"/>
         </Frame>
+        <Dragon:MessageView x:Name="messageView"
+        VerticalOptions="Fill"
+        HorizontalOptions="Fill"/>
         <mapsui:MapView x:Name="mapView"
         VerticalOptions="FillAndExpand"
         HorizontalOptions="Fill"

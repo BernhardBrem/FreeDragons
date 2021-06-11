@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeDragons_Mobile.Android"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeDragons_Mobile.iOS", "FreeDragons_Mobile\FreeDragons_Mobile.iOS\FreeDragons_Mobile.iOS.csproj", "{4A54B8A0-A799-48F5-B970-628C13D8CA4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeDragons_Mobile", "FreeDragons_Mobile\FreeDragons_Mobile\FreeDragons_Mobile.csproj", "{0063F768-FE1B-4340-811D-FB2AEA314047}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreeDragons_Mobile", "FreeDragons_Mobile\FreeDragons_Mobile\FreeDragons_Mobile.csproj", "{0063F768-FE1B-4340-811D-FB2AEA314047}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

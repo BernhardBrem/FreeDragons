@@ -16,7 +16,11 @@ namespace FreeDragons_Mobile.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+            System.IO.Stream jpn =  Assets.Open("japan.png");
+            App.setRessourceStream("japan.png", jpn);
+            App.setRessourceStream("Dragon.svg", Assets.Open("Dragon.svg"));
+            var app = new App();
+            LoadApplication(app);
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
