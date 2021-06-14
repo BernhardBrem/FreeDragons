@@ -7,44 +7,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using Mapsui.Widgets;
-using Mapsui;
-using Mapsui.Layers;
-using Mapsui.Providers;
-using Mapsui.Styles;
-using System.Reflection;
+
 using System.IO;
 using Mapsui.UI.Forms;
+using Position = Mapsui.UI.Forms.Position;
+using System.Diagnostics;
 
 namespace FreeDragons_Mobile
 {
     public partial class MainPage : ContentPage
     {
+        
         public MainPage()
         {
             InitializeComponent();
-
-            var map = new Map();
-            
-
-            var tileLayer = OpenStreetMap.CreateTileLayer();
-
-            map.Layers.Add(tileLayer);
-            
-            map.Layers.Add(CreatePointLayer());
-            map.Home = n => n.NavigateTo(map.Layers[1].Envelope.Centroid, map.Resolutions[14]);
-            
-            map.Widgets.Add(new Mapsui.Widgets.ScaleBar.ScaleBarWidget(map) { TextAlignment = Mapsui.Widgets.Alignment.Center, HorizontalAlignment = Mapsui.Widgets.HorizontalAlignment.Left, VerticalAlignment = Mapsui.Widgets.VerticalAlignment.Bottom });
-
-            mapView.Map = map;
+            DragonMapHandler.Instance.Init(mapView);
             mapView.Pins.Add(getPin(mapView));
             mapView.PinClicked += MapView_PinClicked;
+
+
+            // Subscribe to the event
+            //new FreeDragons_Mobile.GeoLocation().LocationChangedEvent += LocationChangedEventHandler;
+            DragonLocator.startListening();
            
-
-
-
-
         }
+
+
 
      
         private void MapView_PinClicked(object sender, PinClickedEventArgs e)
@@ -54,17 +42,7 @@ namespace FreeDragons_Mobile
 
         }
 
-        private MemoryLayer CreatePointLayer() => new MemoryLayer
-        {
-           
-            Name = "Points",
-            IsMapInfoLayer = true,
-            DataSource = new MemoryProvider(GetMetadataFromEmbeddedResource()),
-            //Style = CreateBitmapStyle()
-            //Style = CreateSymbolStyle()
-           
-           
-        };
+       
 
         public static Pin getPin(Mapsui.UI.Forms.MapView mapView)
         {
@@ -83,35 +61,9 @@ namespace FreeDragons_Mobile
         }
 
 
-    private IEnumerable<IFeature> GetMetadataFromEmbeddedResource()
-        {
+ 
 
-            var metadata = DeserializeFromStream();
-
-            return metadata.Select(c =>
-            {
-                var feature = new Feature();
-                var point = SphericalMercator.FromLonLat(c.Lng, c.Lat);
-                feature.Geometry = point;
-                feature["name"] = c.Name;
-                feature["country"] = "Germany";
-                feature.Styles.Add(new LabelStyle { Text = "Default Label" });
-                return feature;
-            });
-        }
-
-        public static IEnumerable<FreeDragons_Android.ChallangeMetadata> DeserializeFromStream()
-
-        {
-            return new FreeDragons_Android.ChallangeMetadataList();
-            //var serializer = new JsonSerializer();
-            //
-            //using (var sr = new StreamReader(stream))
-            //using (var jsonTextReader = new JsonTextReader(sr))
-            //{
-            //    return serializer.Deserialize<List<T>>(jsonTextReader);
-            //}
-        }
+  
 
 
 
