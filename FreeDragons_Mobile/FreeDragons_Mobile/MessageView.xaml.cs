@@ -15,7 +15,7 @@ namespace FreeDragons_Mobile
         public MessageView()
         {
             InitializeComponent();
-            OK.Clicked += OK_Clicked; ;
+            OK.Clicked += OK_Clicked; 
             IsVisible = false;
         }
 

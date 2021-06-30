@@ -1,16 +1,28 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FreeDragons_Mobile.NewQuestView">
+             x:Class="FreeDragons_Mobile.NewQuestView"
+             BackgroundColor="Gold"
+             VerticalOptions="FillAndExpand">
   <ContentView.Content>
-      <StackLayout>
+        <StackLayout VerticalOptions="FillAndExpand">
             <Label Text="Create new Quest" FontSize="Large"/>
-            <Label  Text="Title"></Label>
+            <Label  Text="Title" FontSize="Large"></Label>
             <Entry x:Name="Title" Text=""></Entry>
-            <Editor x:Name="Description"  Text=""></Editor>
+            <Label  Text="Description" FontSize="Large"></Label>
+            <Editor x:Name="Description"  Text=""  HorizontalOptions="Fill" HeightRequest="300"></Editor>
             <StackLayout Orientation="Horizontal">
-                <Button x:Name="OK" Text="OK"></Button>
-                <Button x:Name="Cancel" Text="Cancel"></Button>
+                <Label Text="Longitude" FontSize="Medium"></Label>
+                <Label x:Name="Longitude"></Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Latitude" FontSize="Medium"></Label>
+                <Label x:Name="Latitude"></Label>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="OK" Text="OK" x:FieldModifier="public"></Button>
+                <Button x:Name="Cancel" Text="Cancel" x:FieldModifier="public"></Button>
             </StackLayout>
         </StackLayout>
   </ContentView.Content>

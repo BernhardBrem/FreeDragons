@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:mapsui="clr-namespace:Mapsui.UI.Forms;assembly=Mapsui.UI.Forms"
              xmlns:Dragon="clr-namespace:FreeDragons_Mobile"
-             x:Class="FreeDragons_Mobile.MainPage">
+             x:Class="FreeDragons_Mobile.MainPage"
+             BackgroundColor="Gold">
 
     <StackLayout>
         <!--Image Source="japan.png"></Image-->
@@ -11,9 +12,15 @@
             <Label Text="Free the dragons!" HorizontalTextAlignment="Center" TextColor="Black" FontSize="16"/>
         </Frame>
         <Dragon:MessageView x:Name="messageView"
+                            x:FieldModifier="public"
         VerticalOptions="Fill"
         HorizontalOptions="Fill"/>
-        <mapsui:MapView x:Name="mapView"
+        <Dragon:NewQuestView x:Name="newQuestView"
+                             x:FieldModifier="public"
+        VerticalOptions="Fill"
+        HorizontalOptions="Fill"/>
+        <Dragon:DragonOverviewMapView x:Name="overviewMapView"
+                                      x:FieldModifier="public"
         VerticalOptions="FillAndExpand"
         HorizontalOptions="Fill"
         BackgroundColor="Gray" />

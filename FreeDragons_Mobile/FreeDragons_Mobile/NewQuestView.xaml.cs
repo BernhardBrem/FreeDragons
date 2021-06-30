@@ -15,11 +15,20 @@ namespace FreeDragons_Mobile
         public NewQuestView()
         {
             InitializeComponent();
-            OK.Clicked += ProcessOK;
-            Cancel.Clicked += ProcessCANCLE;
-            this.IsVisible = false;
-            
+            //OK.Clicked += ProcessOK;
+            //Cancel.Clicked += ProcessCANCLE;
+            IsVisible = false;          
         }
+
+        public void InitDialog()
+        {
+            this.Title.Text = "";
+            this.Description.Text = "";
+            Plugin.Geolocator.Abstractions.Position cords =DragonServices.GetActualCoords();
+            this.Longitude.Text = cords.Longitude.ToString();
+            this.Latitude.Text = cords.Latitude.ToString();
+        }
+ 
 
         private void ProcessOK(object sender, EventArgs e)
         {

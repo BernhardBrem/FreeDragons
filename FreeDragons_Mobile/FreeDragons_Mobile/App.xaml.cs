@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FreeDragons_Mobile.Controler;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using Xamarin.Forms;
@@ -11,13 +12,22 @@ namespace FreeDragons_Mobile
         public App()
         {
             InitializeComponent();
-            MainPage = new MainPage();
-            
+            MainPage mpage = new MainPage();
+            MainPage = mpage;
+            DragonGameControler dragonGameControler = new DragonGameControler()
+            {
+                OverviewMapView = mpage.overviewMapView,
+                NQView = mpage.newQuestView,
+                MView = mpage.messageView
+            };
+            dragonGameControler.StartControling();
         }
 
        
        
         private static Dictionary<string, Stream> resources = new Dictionary<string, Stream>();
+
+        public DragonGameControler Controler { get; set; }
 
         protected override void OnStart()
         {
