@@ -128,6 +128,33 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\unlock.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Cancel_Card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\OK_CARD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\dragon_80_80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Rebel_80_80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\guard_80_80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\DragonLocation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\GuardLocation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\OwnLocation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\RebelLocation.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>

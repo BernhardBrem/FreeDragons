@@ -19,7 +19,12 @@ namespace FreeDragons_Mobile.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             System.IO.Stream jpn =  Assets.Open("japan.png");
             App.setRessourceStream("japan.png", jpn);
+            App.setRessourceStream("DragonLocation.png", Assets.Open("DragonLocation.png"));
+            App.setRessourceStream("OwnLocation.png", Assets.Open("OwnLocation.png"));
+            App.setRessourceStream("GuardLocation.png", Assets.Open("GuardLocation.png"));
+            App.setRessourceStream("RebelLocation.png", Assets.Open("RebelLocation.png"));
             App.setRessourceStream("Dragon.svg", Assets.Open("Dragon.svg"));
+
             var app = new App();
             LoadApplication(app);
         }

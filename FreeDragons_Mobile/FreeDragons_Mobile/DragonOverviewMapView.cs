@@ -27,7 +27,7 @@ namespace FreeDragons_Mobile
 
         private readonly StackLayout _overviewmapButtons;
 
-        public DragonOverviewMapView():base()
+        public DragonOverviewMapView() : base()
         {
 
             Mapsui.Map map = new Map();
@@ -119,30 +119,7 @@ namespace FreeDragons_Mobile
             Navigator.CenterOn(SphericalMercator.FromLonLat(e.Position.Longitude, e.Position.Latitude));
         }
 
-        private IEnumerable<IFeature> GetMetadataFromEmbeddedResource()
-        {
-
-            var metadata = DeserializeFromStream();
-
-            return metadata.Select(c =>
-            {
-                var feature = new Feature();
-                var point = SphericalMercator.FromLonLat(c.Lng, c.Lat);
-                feature.Geometry = point;
-                feature["name"] = c.Name;
-                //feature["country"] = "Germany";
-                feature.Styles.Add(new LabelStyle { Text = "Default Label" });
-                return feature;
-            });
-        }
-
-        public static IEnumerable<FreeDragons_Android.ChallangeMetadata> DeserializeFromStream()
-
-        {
-            return new FreeDragons_Android.ChallangeMetadataList();
-
-        }
-
+        
 
 
     }

@@ -6,23 +6,23 @@
              VerticalOptions="FillAndExpand">
   <ContentView.Content>
         <StackLayout VerticalOptions="FillAndExpand">
-            <Label Text="Create new Quest" FontSize="Large"/>
-            <Label  Text="Title" FontSize="Large"></Label>
+            <Label Text="Create new Quest" FontSize="Large" x:Name="HeadLabel"/>
+            <Label  Text="Title" FontSize="Large" x:Name="TitleLabel"> </Label>
             <Entry x:Name="Title" Text=""></Entry>
-            <Label  Text="Description" FontSize="Large"></Label>
+            <Label  Text="Description" FontSize="Large" x:Name="DescLabel"></Label>
             <Editor x:Name="Description"  Text=""  HorizontalOptions="Fill" HeightRequest="300"></Editor>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Longitude" FontSize="Medium"></Label>
+                <Label Text="Longitude" ></Label>
                 <Label x:Name="Longitude"></Label>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Latitude" FontSize="Medium"></Label>
+                <Label Text="Latitude" ></Label>
                 <Label x:Name="Latitude"></Label>
             </StackLayout>
 
             <StackLayout Orientation="Horizontal">
-                <Button x:Name="OK" Text="OK" x:FieldModifier="public"></Button>
-                <Button x:Name="Cancel" Text="Cancel" x:FieldModifier="public"></Button>
+                <Button x:Name="OK" Text="OK" x:FieldModifier="public" BackgroundColor="DarkGoldenrod" TextColor="Yellow" CornerRadius="10"></Button>
+                <Button x:Name="Cancel" Text="Cancel" x:FieldModifier="public" BackgroundColor="DarkGoldenrod" TextColor="Yellow" CornerRadius="10" ></Button>
             </StackLayout>
         </StackLayout>
   </ContentView.Content>

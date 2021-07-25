@@ -18,7 +18,8 @@ namespace FreeDragons_Mobile
             {
                 OverviewMapView = mpage.overviewMapView,
                 NQView = mpage.newQuestView,
-                MView = mpage.messageView
+                MView = mpage.messageView,
+                DragonGameEditorMapView = mpage.gameEditorMapView
             };
             dragonGameControler.StartControling();
         }

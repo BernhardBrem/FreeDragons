@@ -38,7 +38,7 @@ namespace FreeDragons_Mobile
             var status = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
             if (status == PermissionStatus.Granted)
             {
-                var result = await CrossGeolocator.Current.GetPositionAsync();
+                Plugin.Geolocator.Abstractions.Position result = await CrossGeolocator.Current.GetPositionAsync();
                 return result;
             }
             return null;
