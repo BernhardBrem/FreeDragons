@@ -6,7 +6,8 @@ namespace Freedragons.Model
     {
         public ChallangeMetadata Metadata { get; set; }
         public List<Figure> initialSetup { get; set; }
-       
+
+        public string id { get; set; } = "";
 
        
     }

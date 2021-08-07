@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FreeDragons_Mobile.View.GameEntryView" BackgroundColor="Gold">
+    <ContentView.Content>
+        <StackLayout>
+            <Label Text="What to do today?" />
+            <Frame BackgroundColor="Goldenrod">
+                <StackLayout>
+                    <Label Text="Quests in reach" />
+                    <ListView>
+                        
+                    </ListView>
+                </StackLayout>
+            </Frame>
+            <Button x:Name="SwitchToOverviewMap" x:FieldModifier="public" BackgroundColor="Goldenrod" CornerRadius="10" Text="Overview Map"></Button>
+            <Button x:Name="NewQuest" x:FieldModifier="public" BackgroundColor="Goldenrod" CornerRadius="10" Text="New Quest"></Button>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

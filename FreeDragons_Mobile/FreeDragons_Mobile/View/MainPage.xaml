@@ -2,8 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:mapsui="clr-namespace:Mapsui.UI.Forms;assembly=Mapsui.UI.Forms"
-             xmlns:Dragon="clr-namespace:FreeDragons_Mobile"
-             x:Class="FreeDragons_Mobile.MainPage"
+             xmlns:Dragon="clr-namespace:FreeDragons_Mobile.View"
+             x:Class="FreeDragons_Mobile.View.MainPage"
              BackgroundColor="Gold">
 
     <StackLayout>
@@ -15,6 +15,11 @@
                             x:FieldModifier="public"
         VerticalOptions="Fill"
         HorizontalOptions="Fill"/>
+        <Dragon:GameEntryView x:Name="gameEntryView"
+                             x:FieldModifier="public"
+        VerticalOptions="Fill"
+        HorizontalOptions="Fill"/>
+
         <Dragon:NewQuestView x:Name="newQuestView"
                              x:FieldModifier="public"
         VerticalOptions="Fill"

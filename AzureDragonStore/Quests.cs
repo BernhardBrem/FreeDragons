@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
@@ -45,15 +46,14 @@ namespace AzureDragonStore
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "Quest")] HttpRequest req,
             ILogger log)
         {
-            log.LogInformation("C# HTTP trigger function processed a request.");
-
-
-            var questlist = SChallangeMetadataList.GetInstance();
-           
-
-            var result = JsonConvert.SerializeObject(questlist);
-
-            return new OkObjectResult(result);
+            try { 
+               log.LogInformation("C# HTTP trigger function processed a request.");
+               var questlist = await SChallangeMetadataList.AsyncGetPopulatedInstance();
+                var result = JsonConvert.SerializeObject(questlist);
+               return new OkObjectResult(result);
+            } catch(Exception e){
+                return new OkObjectResult(e.Message + " " + e.StackTrace);
+            }
         }
 
         [FunctionName("PutQuest")]
@@ -62,14 +62,18 @@ namespace AzureDragonStore
             [HttpTrigger(AuthorizationLevel.Anonymous, "post","put", Route = "Quest")] HttpRequest req,
             ILogger log)
         {
+            try { 
             log.LogInformation("upload quest request: " + req.Body.ToString());
             StreamReader r = new StreamReader(req.Body);
             string json = await r.ReadToEndAsync();
-            Quest q = JsonConvert.DeserializeObject<Quest>(json);
-
-
-
-            return new OkObjectResult("Uploaded " + json);
+            SQuest q = JsonConvert.DeserializeObject<SQuest>(json);
+            string result= await q.PublishToServer();
+            return new OkObjectResult("Uploaded " + json + " Result of upload: " + result);
+            }
+            catch(Exception e)
+            {
+                return new OkObjectResult(e.Message + " " + e.StackTrace);
+            }
         }
 
     }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Freedragons.Model
 {
@@ -10,16 +11,29 @@ namespace Freedragons.Model
         public CChallangeMetadataList()
         {
             //generateTestElements();
-            MetadataOfGame = getListFromServer();
+           
         }
 
 
         static readonly ChallangeMetadataList instance = new CChallangeMetadataList();
-        public static ChallangeMetadataList GetInstance() { return instance; }
-        List<ChallangeMetadata> getListFromServer()
+        public static async Task<ChallangeMetadataList> GetInstance() {
+            var metadata = await getList();
+            return instance; 
+        }
+
+        static async Task<List<ChallangeMetadata>> getList()
+        {
+            if (instance.MetadataOfGame == null)
+            {
+                instance.MetadataOfGame = await getListFromServer();
+            }
+            return instance.MetadataOfGame;
+        }
+
+        static async Task<List<ChallangeMetadata>> getListFromServer()
         {
             string url = "Quest";
-            string json = Tools.getFromServer(url);
+            string json = await Tools.getFromServer(url);
             List<ChallangeMetadata> result = JsonConvert.DeserializeObject<List<ChallangeMetadata>>(json);
             return result;
         }

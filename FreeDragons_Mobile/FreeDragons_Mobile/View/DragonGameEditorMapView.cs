@@ -8,9 +8,10 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace FreeDragons_Mobile
+namespace FreeDragons_Mobile.View
 {
     public class DragonGameEditorMapView : MapView
     {
@@ -106,7 +107,7 @@ namespace FreeDragons_Mobile
 
             //map.Home = navigateHome ;//map.Resolutions[map.Resolutions.Count - 1]);
             Map = map;
-            navigateHome(this.Navigator);
+            NavigateHome(this.Navigator);
 
         }
 
@@ -115,10 +116,10 @@ namespace FreeDragons_Mobile
             Navigator.CenterOn(SphericalMercator.FromLonLat(e.Position.Longitude, e.Position.Latitude));
         }
 
-        public void navigateHome(INavigator n)
+        public async Task NavigateHome(INavigator n)
         {
-            var pt = SphericalMercator.FromLonLat(0, 0);
-            var pos = DragonServices.GetLastKnownLocationCoords();
+            Mapsui.Geometries.Point pt = SphericalMercator.FromLonLat(0, 0);
+            Plugin.Geolocator.Abstractions.Position pos = await CrossGeolocator.Current.GetPositionAsync(); ;
             try
             {
                 pt = SphericalMercator.FromLonLat(pos.Longitude, pos.Latitude);

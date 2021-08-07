@@ -12,10 +12,11 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 
-namespace FreeDragons_Mobile
+namespace FreeDragons_Mobile.View
 {
     public class DragonOverviewMapView:MapView
     {
@@ -34,18 +35,7 @@ namespace FreeDragons_Mobile
             var tileLayer = OpenStreetMap.CreateTileLayer();
 
             map.Layers.Add(tileLayer);
-            //map.Layers.Add(CreatePointLayer(new MemoryProvider(GetMetadataFromEmbeddedResource())));
-            //map.Home = initNavigator;
-
-            //map.Widgets.Add(new Mapsui.Widgets.ScaleBar.ScaleBarWidget(map) { TextAlignment = Mapsui.Widgets.Alignment.Center, HorizontalAlignment = Mapsui.Widgets.HorizontalAlignment.Left, VerticalAlignment = Mapsui.Widgets.VerticalAlignment.Bottom });
-
             
-            CrossGeolocator.Current.PositionChanged += LocationChangedEventHandler;
-            
-
-
-
-
             // Buttons:
             // Disable old ones
             IsMyLocationButtonVisible = false;
@@ -98,10 +88,10 @@ namespace FreeDragons_Mobile
             navigateHome(this.Navigator);
         }
 
-        public void navigateHome(INavigator n)
+        public async Task navigateHome(INavigator n)
         {
             var pt = SphericalMercator.FromLonLat(0, 0);
-            var pos = DragonServices.GetLastKnownLocationCoords();
+            var pos =await  CrossGeolocator.Current.GetPositionAsync(); ;
             try
             {
                 pt = SphericalMercator.FromLonLat(pos.Longitude, pos.Latitude);
@@ -114,11 +104,11 @@ namespace FreeDragons_Mobile
             n.NavigateTo(pt, this.Map.Resolutions[5]);
         }
 
-        private void LocationChangedEventHandler(object sender, PositionEventArgs e)
+       
+        public INavigator GetNavigator()
         {
-            Navigator.CenterOn(SphericalMercator.FromLonLat(e.Position.Longitude, e.Position.Latitude));
+            return Navigator;
         }
-
         
 
 

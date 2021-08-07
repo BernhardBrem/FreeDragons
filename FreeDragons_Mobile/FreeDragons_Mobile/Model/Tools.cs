@@ -10,12 +10,12 @@ namespace Freedragons.Model
 {
     public class Tools
     {
-        static public string getFromServer(string path)
+        static public async Task<string> getFromServer(string path)
         {
             String url=AzureConnectionProperties.connectionURL + "API" + "/" + path;
             WebRequest wrGETURL;
             wrGETURL = WebRequest.Create(url);
-            var response = wrGETURL.GetResponse();
+            var response = await wrGETURL.GetResponseAsync();
             var stream = response.GetResponseStream();
             StreamReader reader = new StreamReader(stream);
             string result = reader.ReadToEnd();

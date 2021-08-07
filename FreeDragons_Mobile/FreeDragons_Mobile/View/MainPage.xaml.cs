@@ -13,7 +13,7 @@ using Mapsui.UI.Forms;
 using Position = Mapsui.UI.Forms.Position;
 using System.Diagnostics;
 
-namespace FreeDragons_Mobile
+namespace FreeDragons_Mobile.View
 {
     public partial class MainPage : ContentPage
     {
@@ -21,9 +21,6 @@ namespace FreeDragons_Mobile
         public MainPage()
         {
             InitializeComponent();
-
-
-
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Freedragons.Model;
+using FreeDragons_Mobile.View;
 using Mapsui.Geometries;
 using Mapsui.UI.Forms;
 using Plugin.Geolocator;
@@ -6,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace FreeDragons_Mobile.Controler
 {
@@ -28,9 +30,11 @@ namespace FreeDragons_Mobile.Controler
 
         public Dictionary<Pin, Figure> FigureDict = new Dictionary<Pin, Figure>();
 
-        public void StartControling()
+        public async Task StartControling()
         {
-            OwnPosition = DragonServices.GetLastKnownLocationCoords();
+            await CrossGeolocator.Current.StartListeningAsync(TimeSpan.FromSeconds(5), 2);
+            OwnPosition = await CrossGeolocator.Current.GetPositionAsync(); ;
+
             OwnLocationPin = new Pin(EditorMapView)
             {
                 Label = "",
@@ -44,15 +48,35 @@ namespace FreeDragons_Mobile.Controler
 
             EditorMapView.Pins.Add(OwnLocationPin);
             CrossGeolocator.Current.PositionChanged += LocationChangedEventHandler;
+
+        }
+
+
+        public void bindButtons()
+        {
             EditorMapView.DragonButton.Clicked += AddDragonFigure;
             EditorMapView.GuardButton.Clicked += AddGuardFigure;
             EditorMapView.RebelButton.Clicked += AddRebelFigure;
             EditorMapView.OKButton.Clicked += UploadQuest;
-
-
+            EditorMapView.CancelButton.Clicked += CancelQuest;
         }
 
-        async private void UploadQuest(object sender, EventArgs e) => await Quest.publishToServer();
+        public async Task EndControling()
+        {
+            await CrossGeolocator.Current.StopListeningAsync();
+            CrossGeolocator.Current.PositionChanged -= LocationChangedEventHandler;
+        }
+
+        private async void UploadQuest(object sender, EventArgs e)
+        {
+            EditorMapView.Pins.Clear();
+            await Quest.publishToServer();
+        }
+
+        private void CancelQuest(object sender, EventArgs e)
+        {
+            this.EditorMapView.Pins.Clear();
+        }
 
         public void addOneFigure(Figure f, Byte[] icon)
 
@@ -107,7 +131,7 @@ namespace FreeDragons_Mobile.Controler
             OwnLocationPin.Position = new Position(OwnPosition.Latitude, OwnPosition.Longitude);
         }
 
-        public void StartEditing(ChallangeMetadata metadata)
+        public void StartEditingNewQuest(ChallangeMetadata metadata)
         {
             EditorMapView.IsVisible = true;
             Metadata = metadata;

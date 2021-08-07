@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace FreeDragons_Mobile
+namespace FreeDragons_Mobile.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MessageView : ContentView

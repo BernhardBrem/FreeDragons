@@ -1,4 +1,5 @@
-﻿using Plugin.Geolocator.Abstractions;
+﻿using Plugin.Geolocator;
+using Plugin.Geolocator.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace FreeDragons_Mobile
+namespace FreeDragons_Mobile.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NewQuestView : ContentView
@@ -23,7 +24,7 @@ namespace FreeDragons_Mobile
             IsVisible = false;          
         }
 
-        public void InitDialog()
+        public async Task InitDialog()
         {
             this.Title.Text = "";
             this.Description.Text = "";
@@ -39,7 +40,7 @@ namespace FreeDragons_Mobile
 
             }
                     
-            cords =DragonServices.GetActualCoords();
+            cords = await CrossGeolocator.Current.GetPositionAsync(); 
             this.Longitude.Text = cords.Longitude.ToString();
             this.Latitude.Text = cords.Latitude.ToString();
         }

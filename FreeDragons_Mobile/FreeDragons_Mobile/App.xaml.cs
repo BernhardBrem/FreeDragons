@@ -1,4 +1,5 @@
 ﻿using FreeDragons_Mobile.Controler;
+using FreeDragons_Mobile.View;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,9 +18,10 @@ namespace FreeDragons_Mobile
             DragonGameControler dragonGameControler = new DragonGameControler()
             {
                 OverviewMapView = mpage.overviewMapView,
-                NQView = mpage.newQuestView,
+                NewQuestDialogView = mpage.newQuestView,
                 MView = mpage.messageView,
-                DragonGameEditorMapView = mpage.gameEditorMapView
+                DragonGameEditorMapView = mpage.gameEditorMapView,
+                GameEntryView = mpage.gameEntryView
             };
             dragonGameControler.StartControling();
         }
