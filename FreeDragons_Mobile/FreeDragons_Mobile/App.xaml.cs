@@ -21,7 +21,8 @@ namespace FreeDragons_Mobile
                 NewQuestDialogView = mpage.newQuestView,
                 MView = mpage.messageView,
                 DragonGameEditorMapView = mpage.gameEditorMapView,
-                GameEntryView = mpage.gameEntryView
+                GameEntryView = mpage.gameEntryView,
+                QuestMapView = mpage.questMapView
             };
             dragonGameControler.StartControling();
         }

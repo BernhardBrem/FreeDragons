@@ -36,6 +36,15 @@
         IsVisible="False"
         HorizontalOptions="Fill"
         BackgroundColor="Gray" />
+
+        <Dragon:QuestMapView x:Name="questMapView"
+                                      x:FieldModifier="public"
+        VerticalOptions="FillAndExpand"
+        IsVisible="False"
+        HorizontalOptions="Fill"
+        BackgroundColor="Gray" />
+
+
     </StackLayout>
 
 </ContentPage>

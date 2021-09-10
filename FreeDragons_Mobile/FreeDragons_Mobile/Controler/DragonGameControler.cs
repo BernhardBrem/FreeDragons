@@ -12,14 +12,14 @@ using Xamarin.Forms;
 
 namespace FreeDragons_Mobile.Controler
 {
-    public class DragonGameControler:IGameControler
+    public class DragonGameControler : IGameControler
     {
         // The views
         public DragonOverviewMapView OverviewMapView { get; set; }
         public MessageView MView { get; set; }
         public NewQuestView NewQuestDialogView { get; set; }
         public GameEntryView GameEntryView { get; set; }
-
+        public QuestMapView QuestMapView { get; set; }
         // The controler
         public NewQuestDialogControler NewQuestDialogControler { get; set; }
 
@@ -29,6 +29,8 @@ namespace FreeDragons_Mobile.Controler
         public GameEditorControler GameEditorControler { get; private set; }
 
         public GameEntryControler GameEntryControler { get; private set; }
+
+        public QuestExecutionControler QuestExecutionControler { get; private set; }
 
         public async Task StartControling()
         {
@@ -59,8 +61,35 @@ namespace FreeDragons_Mobile.Controler
             GameEntryView.NewQuest.Clicked+= ShowNewQuestDialog;
             GameEntryControler = new GameEntryControler(GameEntryView);
             GameEntryView.SwitchToOverviewMap.Clicked += this.ShowOverviewMapview;
+            GameEntryView.ReachableQuestView.ItemTapped += this.ReachableQuestTapped;
+            GameEntryView.ReachableQuestView.ItemSelected += this.ReachableQuestSelected;
+            QuestExecutionControler = new QuestExecutionControler(QuestMapView);
+
             await SwitchToDefaultScreen();
 
+
+        }
+
+        private void ReachableQuestSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            QuestListItem it = (QuestListItem)e.SelectedItem;
+            this.startQuest(it);
+
+        }
+
+        private void ReachableQuestTapped(object sender, ItemTappedEventArgs e)
+        {
+            QuestListItem it = (QuestListItem)e.Item;
+            this.startQuest(it);
+           
+        }
+
+        private async Task startQuest(QuestListItem it)
+        {
+            await ClearForNewMode();
+            QuestMapView.IsVisible = true;
+            await QuestExecutionControler.StartControling();
+            QuestExecutionControler.StartNewQuest(it.metaData);
 
         }
 
@@ -80,9 +109,11 @@ namespace FreeDragons_Mobile.Controler
             OverviewMapView.IsVisible = false;
             DragonGameEditorMapView.IsVisible = false;
             GameEntryView.IsVisible = false;
+            QuestMapView.IsVisible = false;
             await NewQuestDialogControler.EndControling();
             await GameEditorControler.EndControling();
             await OverviewMapControler.EndControling();
+            await QuestExecutionControler.EndControling();
 
         }
 
