@@ -22,7 +22,7 @@ namespace FreeDragons_Mobile.View
         public void SetContent(string heading, string content)
         {
             this.Heading.Text = heading;
-            this.Content.Text = content;
+            this.TheContent.Text = content;
         }
 
         public void Message(string heading,string content)

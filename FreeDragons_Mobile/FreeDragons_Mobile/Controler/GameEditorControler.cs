@@ -20,8 +20,6 @@ namespace FreeDragons_Mobile.Controler
         public GameEditorControler(DragonGameEditorMapView editorMapView)
         {
             this.EditorMapView = editorMapView;
-           
-
         }
 
         public DragonGameEditorMapView EditorMapView { get; private set; }

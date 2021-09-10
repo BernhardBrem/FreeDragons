@@ -11,7 +11,7 @@
                HorizontalOptions="Fill">
             <StackLayout>
                 <Label x:Name="Heading" Text="OverwriteMe" Padding="14" HorizontalTextAlignment="Center" FontSize="Title"></Label>
-                <Label x:Name="Content" Text="OverwriteMe"  VerticalOptions="FillAndExpand"  HorizontalTextAlignment="Center">  </Label>
+                <Label x:Name="TheContent" Text="OverwriteMe"  VerticalOptions="FillAndExpand"  HorizontalTextAlignment="Center">  </Label>
                 <Button x:Name="OK" Text="OK" CornerRadius="20" />
             </StackLayout>
         </Frame>

@@ -28,7 +28,7 @@ namespace FreeDragons_Mobile.Controler
         public DragonGameEditorMapView DragonGameEditorMapView { get; set; }
         public GameEditorControler GameEditorControler { get; private set; }
 
-
+        public GameEntryControler GameEntryControler { get; private set; }
 
         public async Task StartControling()
         {
@@ -57,6 +57,7 @@ namespace FreeDragons_Mobile.Controler
 
             OverviewMapView.MapAddQuestButton.Clicked += ShowNewQuestDialog;
             GameEntryView.NewQuest.Clicked+= ShowNewQuestDialog;
+            GameEntryControler = new GameEntryControler(GameEntryView);
             GameEntryView.SwitchToOverviewMap.Clicked += this.ShowOverviewMapview;
             await SwitchToDefaultScreen();
 
@@ -94,7 +95,9 @@ namespace FreeDragons_Mobile.Controler
         private async void SwitchToGameEntry()
         {
             await ClearForNewMode();
+           
             GameEntryView.IsVisible = true;
+            await GameEntryControler.StartControling();
         }
 
         private async void EditorMapViewCancelButton_Clicked(object sender, EventArgs e)
@@ -106,6 +109,7 @@ namespace FreeDragons_Mobile.Controler
         private async void SwitchToDefaultScreen(object sender, object args)
         { 
             await SwitchToDefaultScreen();
+            
         }
 
         private async Task SwitchToDefaultScreen()
@@ -114,10 +118,10 @@ namespace FreeDragons_Mobile.Controler
             SwitchToGameEntry();
         }
 
-        private void EditorMapViewOKButton_Clicked(object sender, EventArgs e)
+        private async void EditorMapViewOKButton_Clicked(object sender, EventArgs e)
         {
-            GameEditorControler.EndControling();
-            SwitchToDefaultScreen();
+            await GameEditorControler.EndControling();
+            await SwitchToDefaultScreen();
             
             
         }
