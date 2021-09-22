@@ -14,5 +14,13 @@ namespace Freedragons.Model
             await Tools.putToServer("Quest", json);
         }
 
+        public async static Task<Quest> getQuestFromServer(ChallangeMetadata md)
+        {
+            string json = JsonConvert.SerializeObject(md);
+            string result = await Tools.getFromServer("Quest", json);
+            return JsonConvert.DeserializeObject<Quest>(result);
+                
+        }
+
     }
 }

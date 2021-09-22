@@ -40,6 +40,11 @@ namespace FreeDragons_Mobile.Controler
             return instance;
         }
 
+        public void requestNewList() {
+            initMetadata();
+        
+        }
+
         public delegate void ListChanged(object sender, ListChangedEventArgs e);
 
         // Declare the event.

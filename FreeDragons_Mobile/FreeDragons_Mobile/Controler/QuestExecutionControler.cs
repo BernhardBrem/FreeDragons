@@ -24,7 +24,7 @@ namespace FreeDragons_Mobile.Controler
 
         public QuestMapView QuestMapView { get; private set; }
         public ChallangeMetadata Metadata { get; private set; }
-        public CQuest Quest { get; private set; }
+        public Quest Quest { get; private set; }
 
         public Dictionary<Pin, Figure> FigureDict = new Dictionary<Pin, Figure>();
 
@@ -79,17 +79,22 @@ namespace FreeDragons_Mobile.Controler
             OwnLocationPin.Position = new Position(OwnPosition.Latitude, OwnPosition.Longitude);
         }
 
-        public void StartNewQuest(ChallangeMetadata metadata)
+        public async void StartNewQuest(ChallangeMetadata metadata)
         {
             QuestMapView.IsVisible = true;
             Metadata = metadata;
-            Quest = new CQuest()
-            {
-                Metadata = metadata
-            };
+            Quest = await CQuest.getQuestFromServer(metadata);
+            foreach (var p in Quest.initialSetup) {
+                setFigure(p);
+            }
+                
             
         }
 
+        private void setFigure(Figure p)
+        {
+            throw new NotImplementedException();
+        }
 
         private static byte[] _owniconc = null;
         private static byte[] GetOwnLocationIcon()

@@ -91,8 +91,9 @@ namespace FreeDragons_Mobile.View
                 WidthRequest = 80,
                 HeightRequest = 80,
             };
-
+            */
             okcancelgroup = new StackLayout { BackgroundColor = Xamarin.Forms.Color.Transparent, Spacing = 5, IsVisible = true, InputTransparent = true, CascadeInputTransparent = false , Orientation=StackOrientation.Horizontal};
+            /*
             okcancelgroup.Children.Add(OKButton);
             */
             okcancelgroup.Children.Add(CancelButton);

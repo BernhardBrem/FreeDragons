@@ -49,7 +49,7 @@ namespace AzureDragonStore
             try { 
                log.LogInformation("C# HTTP trigger function processed a request.");
                var questlist = await SChallangeMetadataList.AsyncGetPopulatedInstance();
-                var result = JsonConvert.SerializeObject(questlist);
+               var result = JsonConvert.SerializeObject(questlist);
                return new OkObjectResult(result);
             } catch(Exception e){
                 return new OkObjectResult(e.Message + " " + e.StackTrace);
@@ -75,6 +75,31 @@ namespace AzureDragonStore
                 return new OkObjectResult(e.Message + " " + e.StackTrace);
             }
         }
+
+
+        [FunctionName("GetQuest")]
+        [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "text/plain", bodyType: typeof(string), Description = "The OK response")]
+        public static async Task<IActionResult> GetQuests(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "Quest")] HttpRequest req,
+            ILogger log)
+        {
+            try
+            {
+                log.LogInformation("get quest request: " + req.Body.ToString());
+                StreamReader r = new StreamReader(req.Body);
+                string json = await r.ReadToEndAsync();
+                ChallangeMetadata md = JsonConvert.DeserializeObject<ChallangeMetadata>(json);
+                Quest result = await SQuest.getQuestByMetadata(md);
+                return new OkObjectResult(JsonConvert.SerializeObject(result));
+            }
+            catch (Exception e)
+            {
+                return new OkObjectResult(e.Message + " " + e.StackTrace);
+            }
+        }
+
+
+
 
     }
 }

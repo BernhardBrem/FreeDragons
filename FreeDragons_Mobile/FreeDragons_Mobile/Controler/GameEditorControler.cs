@@ -69,6 +69,7 @@ namespace FreeDragons_Mobile.Controler
         {
             EditorMapView.Pins.Clear();
             await Quest.publishToServer();
+            ChallangeMetadataListHandler.Getinstance().requestNewList();
         }
 
         private void CancelQuest(object sender, EventArgs e)

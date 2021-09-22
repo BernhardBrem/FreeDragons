@@ -12,17 +12,29 @@ namespace AzureDragonStore.Model
     public class SQuest:Quest
     {
 
-        public String PartitionKey
+        public string PartitionKey => CalculatePartitionKey(Metadata);
+
+        public static string CalculatePartitionKey(ChallangeMetadata Metadata)
         {
-            get
-            {
-                return ((int)this.Metadata.Lat / 10).ToString() + "_" + ((int)this.Metadata.Lng / 10).ToString();
-            }
+
+            return ((int)Metadata.Lat / 10).ToString() + "_" + ((int)Metadata.Lng / 10).ToString();
         }
+
         public override string ToString()
         {
             return JsonConvert.SerializeObject(this);
         }
+
+        public static async Task<SQuest> getQuestByMetadata(ChallangeMetadata md){
+            var partitionkey = CalculatePartitionKey(md);
+            var qcontainer = await DragonCosmosDBHandler.getQuestsContainer();
+            ItemResponse<Quest> r = await qcontainer.ReadItemAsync<Quest>(md.id, new PartitionKey(partitionkey));
+            return (SQuest)r.Resource;
+
+
+
+        }
+
         public async Task<string> PublishToServer()
         {
             string result = "";
